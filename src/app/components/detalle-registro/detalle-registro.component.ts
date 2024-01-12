@@ -34,7 +34,7 @@ export class DetalleRegistroComponent implements OnInit {
     this.pacienteService.eliminarRegistro(this.id).subscribe(
       () => {
         console.log('Registro eliminado exitosamente');
-        this.router.navigate(['/registro/listar']);
+        this.router.navigate(['/registro/listar-todos']);
       }
     );
   }

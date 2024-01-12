@@ -89,7 +89,7 @@ export class NuevoRegistroComponent {
       this.pacienteService.agregarPaciente(formData).subscribe(
         () => {
           console.log('Paciente agregado exitosamente');
-          this.router.navigate(['/registro/listar']);
+          this.router.navigate(['/registro/listar-todos']);
         }
       );
     } else {

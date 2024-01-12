@@ -113,7 +113,7 @@ export class ActualizarRegistroComponent implements OnInit {
       this.pacienteService.actualizarPaciente(this.pacienteId, formData).subscribe(
         () => {
           console.log('Paciente actualizado exitosamente');
-          this.router.navigate(['/registro/listar']);
+          this.router.navigate(['/registro/listar-todos']);
         }
       );
     } else {
