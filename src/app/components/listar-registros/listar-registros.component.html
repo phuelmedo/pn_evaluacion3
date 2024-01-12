@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Lista de Pacientes</h1>
+    <ul>
+      <li *ngFor="let paciente of pacientes" [id]="paciente.id">
+        <p>{{ paciente.nombre }}</p>
+        <div *ngIf="paciente.fotoPersonal; else noImage">
+          <img [src]="paciente.fotoPersonal" alt="Foto Personal" />
+        </div>
+        <ng-template #noImage>
+          <p>Paciente sin imagen</p>
+        </ng-template>
+        <div>
+          <a [routerLink]="'/registro/detalle/' + paciente._id">Ver detalles</a>
+        </div>
+      </li>
+    </ul>
+  </div>

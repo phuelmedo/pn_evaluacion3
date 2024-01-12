@@ -1,0 +1,23 @@
+
+<div class="container">
+    <h1>Busqueda Personalizada</h1>
+  
+    <div>
+      <label>Sexo: </label>
+      <input type="text" [(ngModel)]="sexo" />
+    </div>
+  
+    <div>
+      <label>Fecha de Ingreso: </label>
+      <input type="text" [(ngModel)]="fechaIngreso" />
+    </div>
+  
+    <div>
+      <label>Enfermedad: </label>
+      <input type="text" [(ngModel)]="enfermedad" />
+    </div>
+  
+    <button (click)="handleBuscar()">Buscar</button>
+    <ng-container *ngIf="busquedaRealizada">
+    </ng-container>
+  </div>

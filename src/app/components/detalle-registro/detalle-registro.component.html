@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Detalle del Registro</h1>
+    <p *ngIf="!registro">Registro no existe con el ID: {{ id }}</p>
+    <ng-container *ngIf="registro">
+      <p>RUT: {{ registro.rut }}</p>
+      <p>Nombre: {{ registro.nombre }}</p>
+      <p>Edad: {{ registro.edad }}</p>
+      <p>Sexo: {{ registro.sexo }}</p>
+      <p>Enfermedad: {{ registro.enfermedad }}</p>
+      <p>Fecha de Ingreso: {{ registro.fechaIngreso | date }}</p>
+      <div *ngIf="registro.fotoPersonal; else noImage">
+        <img [src]="registro.fotoPersonal" alt="Foto Personal" />
+      </div>
+      <ng-template #noImage>
+        <p>Paciente sin imagen</p>
+      </ng-template>
+      <div>
+        <a [routerLink]="['/registro/actualizar', id]">Actualizar Registro</a>
+      </div>
+      <div>
+        <a (click)="handleEliminar()">Eliminar Registro</a>
+      </div>
+    </ng-container>
+  </div>

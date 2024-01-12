@@ -1,0 +1,56 @@
+<div className="container">
+    <h1>Actualizar Paciente</h1>
+
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div className="form-group">
+        <label>RUT:</label>
+        <input type="text" formControlName="rut" />
+        <div *ngIf="showErrors('rut') && this.formulario.get('rut')?.errors?.['required']">
+            El RUT es obligatorio.
+        </div>
+        </div>
+
+        <div className="form-group">
+        <label>Nombre:</label>
+        <input type="text" formControlName="nombre" />
+        <div *ngIf="showErrors('nombre') && this.formulario.get('nombre')?.errors?.['required']">
+            El Nombre es obligatorio.
+        </div>
+        </div>
+
+        <div className="form-group">
+        <label>Edad:</label>
+        <input type="number" formControlName="edad" />
+        <div *ngIf="showErrors('edad') && this.formulario.get('edad')?.errors?.['required']">
+            La Edad es obligatoria.
+        </div>
+        </div>
+
+        <div className="form-group">
+        <label>Sexo:</label>
+        <select formControlName="sexo">
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+        </select>
+        </div>
+
+        <div className="form-group">
+        <label>Foto Personal:</label>
+        <input type="file" formControlName="fotoPersonal" (change)="handleFotoChange($event)" />
+        </div>
+
+        <div class="form-group">
+            <img *ngIf="fotoPersonalUrl" [src]="fotoPersonalUrl" alt="Foto Personal" />
+        </div>
+
+        <div className="form-group">
+        <label>Enfermedad:</label>
+        <input type="text" formControlName="enfermedad" />
+        <div *ngIf="showErrors('enfermedad') && this.formulario.get('enfermedad')?.errors?.['required']">
+            La enfermedad es obligatorio.
+        </div>
+        </div>
+
+        <button type="submit">Actualizar Paciente</button>
+        </form>
+</div>
